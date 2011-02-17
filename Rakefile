@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Library for NIS (YP) queries using the libnsl library of libc through ruby ffi.}
   gem.email = "robin@nibor.org"
   gem.authors = ["Robin Stocker"]
-  gem.add_runtime_dependency 'ffi', '> 1.0.0'
+  gem.add_dependency 'ffi', '~> 1.0.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
