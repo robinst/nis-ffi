@@ -11,19 +11,14 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "nis-ffi"
   gem.homepage = "http://github.com/robinst/nis-ffi"
   gem.license = "MIT"
-  gem.summary = %Q{NIS (YP) library using libnsl and ruby ffi}
-  gem.description = %Q{NIS (YP) library which uses the libnsl library of libc through ruby ffi.}
+  gem.summary = %Q{NIS (YP) library using libc's libnsl through ruby ffi}
+  gem.description = %Q{Library for NIS (YP) queries using the libnsl library of libc through ruby ffi.}
   gem.email = "robin@nibor.org"
   gem.authors = ["Robin Stocker"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   gem.add_runtime_dependency 'ffi', '> 1.0.0'
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -33,13 +28,6 @@ Rake::TestTask.new(:test) do |test|
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
 end
-
-#require 'rcov/rcovtask'
-#Rcov::RcovTask.new do |test|
-#  test.libs << 'test'
-#  test.pattern = 'test/**/test_*.rb'
-#  test.verbose = true
-#end
 
 task :default => :test
 
