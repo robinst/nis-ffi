@@ -2,6 +2,8 @@
 
 NIS (YP) library using libc's libnsl through ruby ffi.
 
+It works with (MRI) Ruby and JRuby.
+
 == Usage
 
   >> require 'nis-ffi'
