@@ -32,8 +32,17 @@ module NIS
   module Library
     extend FFI::Library
     ffi_lib 'nsl'
+    attach_function 'yp_get_default_domain', [:pointer], :int
     attach_function 'yp_match', [:string, :string, :string, :int, :pointer, :pointer], :int
     attach_function 'yperr_string', [:int], :string
+  end
+
+  def self.yp_get_default_domain
+    domain_ptr = FFI::MemoryPointer.new(:pointer)
+    code = Library.yp_get_default_domain(domain_ptr)
+    raise_on_error(code)
+    str_ptr = domain_ptr.read_pointer
+    str_ptr.read_string
   end
 
   def self.yp_match(domain, map, key)
