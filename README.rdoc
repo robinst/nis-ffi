@@ -1,6 +1,12 @@
 = nis-ffi
 
-Description goes here.
+NIS (YP) library using libc's libnsl through ruby ffi.
+
+== Usage
+
+  >> require 'nis-ffi'
+  >> NIS.yp_match("nis.example.org", "passwd.byname", "username")
+  => "username:42pwdhashBEEF:1000:1111:Full Name:/home/username:/bin/zsh"
 
 == Contributing to nis-ffi
  
