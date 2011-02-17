@@ -1,5 +1,6 @@
 require 'ffi'
 
+# NIS module providing the yp functions.
 module NIS
   
   YPERR_SUCCESS = 0
@@ -20,6 +21,11 @@ module NIS
   YPERR_ACCESS  = 15
   YPERR_BUSY    = 16
 
+  # Runtime error for yp functions.
+  #
+  # Can be raised from each function when something goes wrong (when the return
+  # code isn't 0). Includes the error code and a readable message. The code can
+  # be checked against the YPERR constants (e.g. NIS::YPERR_BADARGS).
   class YPError < RuntimeError
     attr_reader :code
 
@@ -37,6 +43,7 @@ module NIS
     attach_function 'yperr_string', [:int], :string
   end
 
+  # Get the default domain.
   def self.yp_get_default_domain
     domain_ptr = FFI::MemoryPointer.new(:pointer)
     code = Library.yp_get_default_domain(domain_ptr)
@@ -45,6 +52,10 @@ module NIS
     str_ptr.read_string
   end
 
+  # Look up a value with a specified map and key.
+  #
+  # Returns the string value or raises an YPError (even when it's just a key
+  # that doesn't exist).
   def self.yp_match(domain, map, key)
     value = FFI::MemoryPointer.new(:pointer)
     value_len = FFI::MemoryPointer.new(:int)
@@ -62,6 +73,7 @@ module NIS
     end
   end
 
+  # Returns an error string which describes the error code.
   def self.yperr_string(code)
     Library.yperr_string(code)
   end
