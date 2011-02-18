@@ -9,16 +9,19 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
+RDOC_OPTIONS = ['--main', 'README.rdoc']
+
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name = "nis-ffi"
   gem.homepage = "http://github.com/robinst/nis-ffi"
   gem.license = "MIT"
-  gem.summary = %Q{NIS (YP) library using libc's libnsl through ruby ffi}
-  gem.description = %Q{Library for NIS (YP) queries using the libnsl library of libc through ruby ffi.}
+  gem.summary = %Q{NIS (YP) library using libc's libnsl through ruby-ffi}
+  gem.description = %Q{Library for NIS (YP) queries using the libnsl library of libc through ruby-ffi.}
   gem.email = "robin@nibor.org"
   gem.authors = ["Robin Stocker"]
   gem.add_dependency 'ffi', '~> 1.0.0'
+  gem.rdoc_options = RDOC_OPTIONS
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -44,6 +47,7 @@ Rake::RDocTask.new do |rdoc|
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "nis-ffi #{version}"
+  rdoc.options = RDOC_OPTIONS
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
