@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{nis-ffi}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robin Stocker"]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/nis-ffi.rb",
+    "nis-ffi.gemspec",
     "test/helper.rb",
     "test/test_errors.rb",
     "test/test_server.rb"
