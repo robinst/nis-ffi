@@ -65,12 +65,8 @@ module NIS
     
     str_ptr = value.read_pointer
     len = value_len.read_int
-    if len > 0
-      result = str_ptr.read_string(len)
-      result
-    else
-      nil
-    end
+    result = str_ptr.read_string(len)
+    result
   end
 
   # Returns an error string which describes the error code.
