@@ -1,8 +1,10 @@
 = nis-ffi
 
-NIS (YP) library using libc's libnsl through ruby ffi.
+NIS (YP) library using libc's libnsl through ruby-ffi. It is known to work on
+Ruby 1.8.7, 1.9.2 and JRuby 1.6.0.
 
-It works with (MRI) Ruby and JRuby.
+Please note that only a few functions have been implemented, so please fork and
+add the ones you need. It's really easy thanks to ffi!
 
 == Usage
 
@@ -12,16 +14,19 @@ It works with (MRI) Ruby and JRuby.
 
 == Contributing to nis-ffi
  
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Check out the latest master to make sure the feature hasn't been implemented
+  or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it
+  and/or contributed it
 * Fork the project
 * Start a feature/bugfix branch
 * Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+* Make sure to add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to
+  have your own version, or is otherwise necessary, that is fine, but please
+  isolate to its own commit so I can cherry-pick around it.
 
 == Copyright
 
-Copyright (c) 2011 Robin Stocker. See LICENSE.txt for
-further details.
-
+Copyright (c) 2011 Robin Stocker. See LICENSE.txt for further details.
