@@ -37,7 +37,16 @@ module NIS
 
   module Library
     extend FFI::Library
-    ffi_lib 'nsl'
+    begin
+      ffi_lib 'nsl'
+    rescue LoadError
+      begin
+        # fall back to libc (Mac OS X is different)
+        ffi_lib 'c'
+      rescue LoadError
+        raise LoadError, "nis-ffi: Neither libnsl nor libc could be loaded, giving up."
+      end
+    end
     attach_function 'yp_get_default_domain', [:pointer], :int
     attach_function 'yp_match', [:string, :string, :string, :int, :pointer, :pointer], :int
     attach_function 'yperr_string', [:int], :string
