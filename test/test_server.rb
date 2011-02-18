@@ -5,7 +5,7 @@ class TestServer < Test::Unit::TestCase
     assert_not_nil NIS::yp_get_default_domain()
   end
 
-  context "in the default domain" do
+  context "The NIS server (default domain)" do
     setup do
       @domain = NIS::yp_get_default_domain()
     end
