@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
     "lib/nis-ffi.rb",
     "lib/nis-ffi/version.rb",
     "nis-ffi.gemspec",
+    "tasks/gemspec_check.rake",
     "test/helper.rb",
     "test/test_errors.rb",
     "test/test_server.rb",

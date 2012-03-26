@@ -28,3 +28,8 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+# Change to Bundler::GemHelper.gemspec when it's released
+$gemspec = Bundler.load_gemspec('nis-ffi.gemspec')
+
+FileList['tasks/**/*.rake'].each { |task| import task }
