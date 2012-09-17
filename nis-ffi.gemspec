@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--main", "README.rdoc"]
   s.requirements = ["libnsl (provided by libc)"]
 
-  s.add_runtime_dependency 'ffi', '~> 1.0.0'
+  s.add_runtime_dependency 'ffi', '~> 1.0'
   s.add_development_dependency 'bundler', '~> 1.0'
   s.add_development_dependency 'rake', '~> 0.9.2'
   s.add_development_dependency 'shoulda-context', '~> 1.0'
