@@ -1,12 +1,15 @@
 = nis-ffi
 
-NIS (YP) library using libc's libnsl through ruby-ffi. It is known to work on
-Ruby 1.8.7, 1.9.2 and JRuby 1.6.0.
+NIS (YP) library for Ruby using libc's libnsl through
+ffi[https://github.com/ffi/ffi]. It is known to work on Ruby 1.8.7, 1.9.3 and
+JRuby 1.6.
 
 Please note that only a few functions have been implemented, so please fork and
 add the ones you need. It's really easy thanks to ffi!
 
 == Usage
+
+For installation, see {page on rubygems.org}[http://rubygems.org/gems/nis-ffi].
 
   >> require 'nis-ffi'
   >> NIS.yp_match("nis.example.org", "passwd.byname", "username")

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version = NIS::Version::STRING
   s.authors = ["Robin Stocker"]
   s.email = %q{robin@nibor.org}
-  s.homepage = %q{http://github.com/robinst/nis-ffi}
+  s.homepage = %q{https://github.com/robinst/nis-ffi}
   s.licenses = ["MIT"]
   s.summary = %q{NIS (YP) library using libc's libnsl through ruby-ffi}
   s.description = %q{Library for NIS (YP) queries using the libnsl library of libc through ruby-ffi.}
